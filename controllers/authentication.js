@@ -1,9 +1,14 @@
 const User = require('../models/user');
 
 
+
 exports.signup = function(req, res, next) {
     const email = req.body.email;
     const password = req.body.password;
+
+    if(!email || !password) {
+        return res.status(422).send({ error : 'You must provide email and password!' });
+    }
 
     //We search for all user by email and the then call the callback..if they do existingUser will be populated with the founded user otherwise will be null
     User.findOne({ email: email}, function( err, existingUser){
@@ -14,7 +19,7 @@ exports.signup = function(req, res, next) {
         
         // See if a user with the given email exists. (we don't want any duplicates)
         if(existingUser) {
-            return res.status(422).send({ error : 'Email is in use' });
+            return res.status(422).send({ error : 'Email is in use!' });
         }
 
         // If a user wiuth email does NOT exist, create and save user record

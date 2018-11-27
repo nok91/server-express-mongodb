@@ -1,4 +1,5 @@
-{ "//" : [
+{
+  "//": [
     "nodemon: watches our project directory for any file changes and restart a server with our new changes"
   ],
   "name": "server",
@@ -13,6 +14,7 @@
   "author": "MohammedNokri <nokri.mohammed@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongoose": "^5.3.13",
