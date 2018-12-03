@@ -1,4 +1,4 @@
-# ReduxSimpleStarter
+# Server-Express-Mongodb
 
 
 ### Getting Started
